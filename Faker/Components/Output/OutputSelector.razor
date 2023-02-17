@@ -68,6 +68,16 @@
         case FieldType.Iban:
             <span>@Value</span>
             break;
+        case FieldType.Avatar:
+            <img src = "@Value" alt="@Field.Name"/>
+            break;
+        case FieldType.Email:
+        case FieldType.ExampleEmail:
+        case FieldType.UserName:
+        case FieldType.UserNameUnicode:
+        case FieldType.Password:
+            <span>@Value</span>
+            break;
         default:
             <span>@Value</span>
             break;

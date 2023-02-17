@@ -6,6 +6,7 @@
     @switch (Field.Field.FieldType)
     {
         case FieldType.Simple:
+        case FieldType.Avatar:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
             break;
         case FieldType.ImageDataUri:
@@ -68,6 +69,23 @@
             break;
         case FieldType.Iban:
             <Iban Field="Field" RemoveRequested="RemoveField"></Iban>
+            break;
+
+        case FieldType.Email:
+            <Email Field="Field" RemoveRequested="RemoveField"></Email>
+            break;
+
+        case FieldType.ExampleEmail:
+            <ExampleEmail Field="Field" RemoveRequested="RemoveField"></ExampleEmail>
+            break;
+        case FieldType.UserName:
+            <UserName Field="Field" RemoveRequested="RemoveField"></UserName>
+            break;
+        case FieldType.UserNameUnicode:
+            <UserNameUnicode Field="Field" RemoveRequested="RemoveField"></UserNameUnicode>
+            break;
+        case FieldType.Password:
+            <Password Field="Field" RemoveRequested="RemoveField"></Password>
             break;
         default:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>

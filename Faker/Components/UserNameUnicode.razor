@@ -1,0 +1,19 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    if (UserNameUnicodeField != null)
+    {
+        <MatTextField @bind-Value="@UserNameUnicodeField.FirstName" Label="First Name"></MatTextField>
+        <MatTextField @bind-Value="@UserNameUnicodeField.LastName" Label="Last Name"></MatTextField>
+
+    }
+}
+
+@code {
+
+    private UserNameUnicodeField? UserNameUnicodeField => Field?.Field as UserNameUnicodeField;
+
+}

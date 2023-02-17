@@ -22,5 +22,11 @@ public enum FieldType
     Account,
     Amount,
     CreditCardNumber,
-    Iban
+    Iban,
+    Avatar,
+    Email,
+    ExampleEmail,
+    UserName,
+    UserNameUnicode,
+    Password
 }

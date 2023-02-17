@@ -1,0 +1,22 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    if (EmailField != null)
+    {
+        <MatTextField @bind-Value="@EmailField.FirstName" Label="First Name"></MatTextField>
+        <MatTextField @bind-Value="@EmailField.LastName" Label="Last Name"></MatTextField>
+        <MatTextField @bind-Value="@EmailField.Provider" Label="Provider"></MatTextField>
+        <MatTextField @bind-Value="@EmailField.UniqueSuffix" Label="Unique Suffix"></MatTextField>
+    }
+}
+
+
+@code{
+
+    private EmailField? EmailField => Field?.Field as EmailField;
+
+}
