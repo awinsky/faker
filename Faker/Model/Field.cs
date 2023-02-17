@@ -25,6 +25,11 @@ public class Field<T> : IField<T>
 
     public virtual string Description { get; }
 
+    public virtual T? GenerateExact()
+    {
+        if (_generator != null) return _generator();
+        return default;
+    }
     public virtual object? Generate()
     {
         if (_generator != null) return _generator();

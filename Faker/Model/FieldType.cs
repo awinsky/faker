@@ -11,5 +11,6 @@ public enum FieldType
     StreetAddress,
     Latitude,
     Longitude,
-    Price
+    Price,
+    Categories
 }

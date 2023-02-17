@@ -1,0 +1,22 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    @if (CategoriesField != null)
+    {
+        <MatNumericUpDownField Label="Number" TValue="int"
+                       @bind-Value=CategoriesField.Number
+                               Step="1"
+                               Minimum="1" Maximum="100"></MatNumericUpDownField>
+    }
+}
+
+@code {
+
+    private CategoriesField? CategoriesField => Field?.Field as CategoriesField;
+
+}

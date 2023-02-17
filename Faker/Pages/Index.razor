@@ -48,10 +48,16 @@ else
         <h4>output</h4>
     </p>
     <div>
+        
+        <MatList>
         @foreach (var field in _selectedFields)
-        {
-            <FieldSelector Field="field" RemoveRequested="RemoveField"></FieldSelector>
+        {<MatListItem>
+             @field.Name
+             <FieldSelector Field="field" RemoveRequested="RemoveField"></FieldSelector>
+         </MatListItem>
+           
         }
+        </MatList>
 
     </div>
     <p>

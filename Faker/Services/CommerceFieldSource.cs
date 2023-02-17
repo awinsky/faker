@@ -9,7 +9,7 @@ public class CommerceFieldSource : BaseFieldSource
     {
         yield return new Field<string>(Faker, () => Faker.Commerce.Department(), "Department");
         yield return new PriceField(Faker, "Price");
-        yield return new Field<string>(Faker, () => Faker.Commerce.Categories(1).FirstOrDefault(), "Categories");
+        yield return new CategoriesField(Faker, "Categories");
         yield return new Field<string>(Faker, () => Faker.Commerce.ProductName(), "Product Name");
         yield return new Field<string>(Faker, () => Faker.Commerce.Color(), "Color");
         yield return new Field<string>(Faker, () => Faker.Commerce.Product(), "Product");

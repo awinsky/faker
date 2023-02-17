@@ -4,11 +4,8 @@
 
 @if (Field != null)
 {
-    
-    <MatButton Raised="true"
-               Style="margin: 2px"
-               OnClick="RemoveField" TrailingIcon="remove">@Field.Name</MatButton>
-
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+   
 
     @if (ImageDataUriField != null)
     {
