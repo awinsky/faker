@@ -9,16 +9,11 @@ public class LatitudeField : Field<double>
     public double Min { get; set; } = -90;
     public double Max { get; set; } = 90;
 
-    public override object? Generate()
+    public override double GenerateExact()
     {
-        return Faker.Address.Latitude(Min, Max);    
+        return Faker.Address.Latitude(Min, Max);
     }
-
-    public override string? GenerateString()
-    {
-        return Generate()?.ToString();
-    }
-
+    
     public override FieldType FieldType => FieldType.Latitude;
 
 }

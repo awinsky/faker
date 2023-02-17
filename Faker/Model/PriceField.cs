@@ -11,14 +11,9 @@ public class PriceField : Field<string>
     public int Decimals { get; set; } = 2;
     public string Symbol{get;set;} = string.Empty;
 
-    public override object? Generate()
+    public override string? GenerateExact()
     {
         return Faker.Commerce.Price(Min, Max, Decimals, Symbol);
-    }
-
-    public override string? GenerateString()
-    {
-        return Generate()?.ToString();
     }
 
     public override FieldType FieldType => FieldType.Price;

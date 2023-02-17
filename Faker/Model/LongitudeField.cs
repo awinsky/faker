@@ -11,12 +11,17 @@ public class LongitudeField : Field<double>
 
     public override object? Generate()
     {
-        return Faker.Address.Longitude(Min, Max);
+        return GenerateExact();
     }
 
     public override string? GenerateString()
     {
         return Generate()?.ToString();
+    }
+
+    public override double GenerateExact()
+    {
+        return Faker.Address.Longitude(Min, Max);
     }
 
     public override FieldType FieldType => FieldType.Longitude;

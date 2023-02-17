@@ -11,14 +11,11 @@ public class ImagePicsumUrlField : Field<string>
     public bool GrayScale{get;set;}
     public bool Blur{get;set;}
 
-    public override object? Generate()
+    public override string? GenerateExact()
     {
         return Faker.Image.PicsumUrl(Width, Height, GrayScale, Blur);
     }
-
+    
     public override FieldType FieldType => FieldType.ImagePicsumUrl;
-    public override string? GenerateString()
-    {
-        return Generate()?.ToString();
-    }
+  
 }

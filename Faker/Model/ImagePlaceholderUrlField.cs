@@ -13,13 +13,9 @@ public class ImagePlaceholderUrlField : Field<string>
     public string Format { get; set; } = "png";
 
     public override FieldType FieldType => FieldType.ImagePlaceholderUrl;
-    public override object? Generate()
+    public override string? GenerateExact()
     {
         return Faker.Image.PlaceholderUrl(Width, Height, Text, BackColor, TextColor, Format);
     }
 
-    public override string? GenerateString()
-    {
-        return Generate()?.ToString();
-    }
 }

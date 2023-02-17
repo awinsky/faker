@@ -10,26 +10,26 @@ public class AddressFieldSource : BaseFieldSource
 
     protected override IEnumerable<IField> GetFieldsInternal()
     {
-        yield return new Field<string>(Faker, () => Faker.Address.City(), "City");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.City(), "City");
         yield return new StreetAddressField(Faker, "Street Address");
-        yield return new Field<string>(Faker, () => Faker.Address.ZipCode(), "Zip Code");
-        yield return new Field<string>(Faker, () => Faker.Address.CitySuffix(), "City Suffix");
-        yield return new Field<string>(Faker, () => Faker.Address.StreetName(), "Street Name");
-        yield return new Field<string>(Faker, () => Faker.Address.BuildingNumber(), "Building Number");
-        yield return new Field<string>(Faker, () => Faker.Address.StreetSuffix(), "Street Suffix");
-        yield return new Field<string>(Faker, () => Faker.Address.SecondaryAddress(), "Secondary Address");
-        yield return new Field<string>(Faker, () => Faker.Address.County(), "County");
-        yield return new Field<string>(Faker, () => Faker.Address.Country(), "Country");
-        yield return new Field<string>(Faker, () => Faker.Address.FullAddress(), "Full Address");
-        yield return new Field<string>(Faker, () => Faker.Address.CountryCode(), "Country Code");
-        yield return new Field<string>(Faker, () => Faker.Address.State(), "State");
-        yield return new Field<string>(Faker, () => Faker.Address.StateAbbr(), "State Abbr");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.ZipCode(), "Zip Code");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.CitySuffix(), "City Suffix");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.StreetName(), "Street Name");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.BuildingNumber(), "Building Number");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.StreetSuffix(), "Street Suffix");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.SecondaryAddress(), "Secondary Address");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.County(), "County");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.Country(), "Country");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.FullAddress(), "Full Address");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.CountryCode(), "Country Code");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.State(), "State");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.StateAbbr(), "State Abbr");
 
         yield return new LatitudeField(Faker, "Latitude");
         yield return new LongitudeField(Faker, "Longitude");
 
-        yield return new Field<string>(Faker, () => Faker.Address.Direction(), "Direction");
-        yield return new Field<string>(Faker, () => Faker.Address.CardinalDirection(), "Cardinal Direction");
-        yield return new Field<string>(Faker, () => Faker.Address.OrdinalDirection(), "Cardinal Direction");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.Direction(), "Direction");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.CardinalDirection(), "Cardinal Direction");
+        yield return new SimpleField<string>(Faker, () => Faker.Address.OrdinalDirection(), "Cardinal Direction");
     }
 }

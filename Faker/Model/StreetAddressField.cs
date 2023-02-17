@@ -9,15 +9,11 @@ public class StreetAddressField : Field<string>
     {
     }
 
-    public override object? Generate()
+    public override string? GenerateExact()
     {
         return Faker.Address.StreetAddress(UseFullAddress);
-
     }
-    public override string? GenerateString()
-    {
-        return Generate()?.ToString();
-    }
+    
     public override FieldType FieldType => FieldType.StreetAddress;
 
 }

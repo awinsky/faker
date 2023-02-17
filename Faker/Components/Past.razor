@@ -1,0 +1,23 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    @if (PastField != null)
+    {
+        <MatNumericUpDownField Label="Min" TValue="int"
+                               @bind-Value=PastField.YearsToGoBack
+                               Step="1"
+                               Minimum="1" Maximum="2000">
+
+        </MatNumericUpDownField>
+        <MatDatePicker @bind-Value="PastField.RefDate" Label="Ref date"></MatDatePicker>
+    }
+}
+
+@code {
+
+    private PastField? PastField => Field?.Field as PastField;
+
+
+}

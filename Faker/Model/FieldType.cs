@@ -12,5 +12,6 @@ public enum FieldType
     Latitude,
     Longitude,
     Price,
-    Categories
+    Categories,
+    Past
 }

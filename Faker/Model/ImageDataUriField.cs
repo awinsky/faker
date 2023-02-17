@@ -10,15 +10,9 @@ public class ImageDataUriField : Field<string>
     public int Height { get; set; } = 100;
     public string? Color { get; set; } = "gray";
 
-    public override object? Generate()
+    public override string? GenerateExact()
     {
-        
         return Faker.Image.DataUri(Width, Height, Color);
-    }
-
-    public override string? GenerateString()
-    {
-        return Generate()?.ToString();
     }
 
     public override FieldType FieldType => FieldType.ImageDataUri;

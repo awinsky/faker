@@ -11,16 +11,10 @@ public class ImageLoremFlickrUrlField : Field<string>
     public bool Grascale { get; set; }
     public bool MatchAllKeywords{get;set;}
 
-    public override object? Generate()
+    public override string? GenerateExact()
     {
         return Faker.Image.LoremFlickrUrl(Width, Height, Keywords, Grascale, MatchAllKeywords);
-
     }
-
+    
     public override FieldType FieldType => FieldType.ImageLoremFlickrUrl;
-
-    public override string? GenerateString()
-    {
-        return Generate()?.ToString();
-    }
 }
