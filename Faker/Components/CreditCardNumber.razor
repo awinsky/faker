@@ -1,0 +1,21 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    @if (CreditCardNumberField != null)
+    {
+        <MatSelect Label="Card type" @bind-Value="@CreditCardNumberField.Type">
+            @foreach (var item in CreditCardNumberField.Options)
+            {
+                <MatOptionString Value="@item">@item</MatOptionString>
+            }
+        </MatSelect>
+    }
+}
+@code{
+
+    private CreditCardNumberField? CreditCardNumberField => Field?.Field as CreditCardNumberField;
+
+}

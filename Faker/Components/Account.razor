@@ -1,0 +1,25 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    @if (AccountField != null)
+    {
+        <MatNumericUpDownField Label="Length" TValue="int"
+                       @bind-Value=AccountField.Length
+                               Step="1"
+                               Minimum="1" Maximum="100">
+
+        </MatNumericUpDownField>
+    }
+}
+
+
+@code {
+
+    private AccountField? AccountField => Field?.Field as AccountField;
+
+
+}

@@ -18,5 +18,9 @@ public enum FieldType
     Soon,
     SoonOffset,
     Future,
-    FutureOffset
+    FutureOffset,
+    Account,
+    Amount,
+    CreditCardNumber,
+    Iban
 }

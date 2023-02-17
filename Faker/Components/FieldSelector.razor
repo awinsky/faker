@@ -57,6 +57,18 @@
         case FieldType.FutureOffset:
             <FutureOffset Field="Field" RemoveRequested="RemoveField"></FutureOffset>
             break;
+        case FieldType.Account:
+            <Account Field="Field" RemoveRequested="RemoveField"></Account>
+            break;
+        case FieldType.Amount:
+            <Amount Field="Field" RemoveRequested="RemoveField"></Amount>
+            break;
+        case FieldType.CreditCardNumber:
+            <CreditCardNumber Field="Field" RemoveRequested="RemoveField"></CreditCardNumber>
+            break;
+        case FieldType.Iban:
+            <Iban Field="Field" RemoveRequested="RemoveField"></Iban>
+            break;
         default:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
             break;

@@ -1,0 +1,32 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    @if (AmountField != null)
+    {
+        <MatNumericUpDownField Label="Min" TValue="decimal"
+                       @bind-Value=AmountField.Min
+                               Step="0.01m"
+                               DecimalPlaces=2 Minimum="1" Maximum="18000">
+
+        </MatNumericUpDownField>
+        <MatNumericUpDownField Label="Max" TValue="decimal"
+                       @bind-Value=AmountField.Max
+                               Step="0.01m"
+                               DecimalPlaces=2 Minimum="1" Maximum="18000">
+
+        </MatNumericUpDownField>
+        <MatNumericUpDownField Label="Decimals" TValue="int"
+                       @bind-Value=AmountField.Decimals
+                               Step="1"
+                               Minimum="0" Maximum="5"></MatNumericUpDownField>
+    }
+}
+@code {
+
+    private AmountField? AmountField => Field?.Field as AmountField;
+
+
+}

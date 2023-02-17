@@ -1,0 +1,20 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    @if (IbanField != null)
+    {
+        <MatTextField @bind-Value="@IbanField.CountryCode" Label="Country code"></MatTextField>
+        <MatCheckbox @bind-Value="@IbanField.Formatted" Label="Formatted"></MatCheckbox>
+    }
+
+}
+
+
+@code{
+
+    private IbanField? IbanField => Field?.Field as IbanField;
+
+}

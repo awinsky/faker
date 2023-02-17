@@ -8,20 +8,21 @@ public class FinanceFieldSource : BaseFieldSource
     public override string CategoryName => "Finance";
     protected override IEnumerable<IField> GetFieldsInternal()
     {
-        yield return new SimpleField<string>(Faker, () => Faker.Finance.Account(), "Account");
+       
+        yield return new AccountField(Faker, "Account");
         yield return new SimpleField<string>(Faker, () => Faker.Finance.AccountName(), "Account Name");
-        yield return new SimpleField<string>(Faker, () => Faker.Finance.Amount().ToString(CultureInfo.InvariantCulture),
-            "Amount");
+        yield return new AmountField(Faker, "Amount");
+  
         yield return new SimpleField<string>(Faker, () => Faker.Finance.TransactionType(),
-            "Amount");
+            "Transaction Type");
         yield return new SimpleField<string>(Faker, () => Faker.Finance.Currency().Symbol,
             "Currency Symbol");
         yield return new SimpleField<string>(Faker, () => Faker.Finance.Currency().Code,
             "Currency Code");
         yield return new SimpleField<string>(Faker, () => Faker.Finance.Currency().Description,
             "Currency Description");
-        yield return new SimpleField<string>(Faker, () => Faker.Finance.CreditCardNumber(),
-            "Credit Card Number");
+        yield return new CreditCardNumberField(Faker, "Credit Card Number");
+
         yield return new SimpleField<string>(Faker, () => Faker.Finance.CreditCardCvv(),
             "Credit Card Cvv");
         yield return new SimpleField<string>(Faker, () => Faker.Finance.BitcoinAddress(),
@@ -32,7 +33,7 @@ public class FinanceFieldSource : BaseFieldSource
             "Routing Number");
         yield return new SimpleField<string>(Faker, () => Faker.Finance.Bic(),
             "Bic");
-        yield return new SimpleField<string>(Faker, () => Faker.Finance.Iban(),
-            "Iban");
+
+        yield return new IbanField(Faker, "IBAN");
     }
 }
