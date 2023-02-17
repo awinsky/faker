@@ -13,5 +13,10 @@ public enum FieldType
     Longitude,
     Price,
     Categories,
-    Past
+    Past,
+    PastOffset,
+    Soon,
+    SoonOffset,
+    Future,
+    FutureOffset
 }

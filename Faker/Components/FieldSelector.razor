@@ -41,6 +41,22 @@
         case FieldType.Past:
             <Past Field="Field" RemoveRequested="RemoveField"></Past>
             break;
+        case FieldType.PastOffset:
+            <PastOffset Field="Field" RemoveRequested="RemoveField"></PastOffset>
+            break;
+        case FieldType.Soon:
+            <Soon Field="Field" RemoveRequested="RemoveField"></Soon>
+            break;
+        case FieldType.SoonOffset:
+            <SoonOffset Field="Field" RemoveRequested="RemoveField"></SoonOffset>
+            break;
+        case FieldType.Future:
+            <Future Field="Field" RemoveRequested="RemoveField"></Future>
+            break;
+
+        case FieldType.FutureOffset:
+            <FutureOffset Field="Field" RemoveRequested="RemoveField"></FutureOffset>
+            break;
         default:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
             break;

@@ -13,4 +13,6 @@ public class PastField : Field<DateTime>
     {
         return Faker.Date.Past(YearsToGoBack, RefDate);
     }
+
+    public override FieldType FieldType => FieldType.Past;
 }

@@ -1,0 +1,23 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    @if (SoonField != null)
+    {
+        <MatNumericUpDownField Label="Days" TValue="int"
+                               @bind-Value=SoonField.Days
+                               Step="1"
+                               Minimum="1" Maximum="100000"></MatNumericUpDownField>
+        <MatDatePicker @bind-Value="SoonField.RefDate" Label="Ref date"></MatDatePicker>
+    }
+
+}
+
+@code {
+
+    private SoonFieldOffset? SoonField => Field?.Field as SoonFieldOffset;
+
+
+}

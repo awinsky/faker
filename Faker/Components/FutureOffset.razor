@@ -1,0 +1,23 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+@if (Field != null)
+{
+        <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    @if (FutureOffsetField != null)
+    {
+                <MatNumericUpDownField Label="Years To Go Forward" TValue="int"
+                       @bind-Value=FutureOffsetField.YearsToGoForward
+                               Step="1"
+                               Minimum="1" Maximum="2000">
+
+                </MatNumericUpDownField>
+        <MatDatePicker @bind-Value="FutureOffsetField.RefDate" Label="Ref date"></MatDatePicker>
+    }
+}
+
+@code {
+
+    private FutureOffsetField? FutureOffsetField => Field?.Field as FutureOffsetField;
+
+
+}
