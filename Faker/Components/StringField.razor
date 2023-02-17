@@ -1,0 +1,9 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+@if (Field != null)
+{
+    <MatButton Raised="true"
+               Style="margin: 2px"
+           OnClick="RemoveField" TrailingIcon="remove">@Field.Name</MatButton>
+}
+

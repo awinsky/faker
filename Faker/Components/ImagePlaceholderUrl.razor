@@ -1,0 +1,28 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+@if (Field != null)
+{
+
+    <MatButton Raised="true"
+               Style="margin: 2px"
+               OnClick="RemoveField" TrailingIcon="remove">@Field.Name</MatButton>
+
+    @if (ImageDataUriField != null)
+    {
+        <MatTextField @bind-Value="@ImageDataUriField.Width" Label="Width"></MatTextField>
+        <MatTextField @bind-Value="@ImageDataUriField.Height" Label="Height"></MatTextField>
+        <MatTextField @bind-Value="@ImageDataUriField.Text" Label="Image text"></MatTextField>
+        <InputText  type="color" @bind-Value="@ImageDataUriField.BackColor">back color</InputText>
+        <InputText type="color" @bind-Value="@ImageDataUriField.TextColor">text color</InputText>
+        <MatTextField @bind-Value="@ImageDataUriField.Format" Label="Format"></MatTextField>
+     
+     
+    }
+   
+}
+
+@code{
+
+    private ImagePlaceholderUrlField? ImageDataUriField => Field?.Field as ImagePlaceholderUrlField;
+
+}

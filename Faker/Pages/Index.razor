@@ -1,0 +1,93 @@
+﻿@page "/"
+@using Faker.Services
+@using Faker.Model
+
+
+
+@inject IEnumerable<IFieldSource> Sources
+@inject ILocaleSource Locales
+@inject IJSRuntime JsRuntime
+
+@if (_locale == "ru")
+{
+    <img src="ru_ship.jpg"/>
+}
+else
+{
+
+    <MatSelectItem Items="@Locales.GetLocales()"
+                   TValue="LocaleDto"
+                   ValueChanged="LocaleChanged">
+        <ItemTemplate>
+            <span>@context?.Name</span>
+        </ItemTemplate>
+    </MatSelectItem>
+
+@foreach (var source in Sources)
+{
+    <MatAccordion>
+        <MatExpansionPanel >
+            <MatExpansionPanelSummary>
+                <MatExpansionPanelHeader>@source.CategoryName</MatExpansionPanelHeader>
+            </MatExpansionPanelSummary>
+            <MatExpansionPanelDetails>
+                @foreach (var field in source.GetFields())
+                {
+                    <MatButton Raised="true"
+                               Style="margin: 2px"
+                               OnClick="() => AddFiled(field)"
+                               TrailingIcon="add">@field.Description</MatButton>
+
+                }
+            </MatExpansionPanelDetails>
+        </MatExpansionPanel>
+    </MatAccordion>
+}
+
+    <p>
+        <h4>output</h4>
+    </p>
+    <div>
+        @foreach (var field in _selectedFields)
+        {
+            <FieldSelector Field="field" RemoveRequested="RemoveField"></FieldSelector>
+        }
+
+    </div>
+    <p>
+        <MatTextField @bind-Value="@Count" HelperText="Generate items" Label="Count"></MatTextField>
+        <MatButton OnClick="Generate">Generate</MatButton>
+        <MatButton Disabled = "@(_result.Count<=0)" OnClick="SaveToCsv">Save</MatButton>
+    </p>
+@if (_result.Count > 0)
+{
+    <table class="table">
+        <thead>
+        @foreach (var field in _selectedFields)
+        {
+            <th>@field.Name</th>
+        }
+        </thead>
+        <tbody>
+        @foreach (var row in _result)
+        {
+            <tr>
+
+                @for (var i = 0; i < _selectedFields.Count; i++)
+                {
+                    <td>
+                      
+                          <OutputSelector Field="_selectedFields[i]"
+                        Value="@(row[i])"
+                                        ></OutputSelector>
+                    </td>
+                }
+            </tr>
+
+        }
+
+        </tbody>
+
+    </table>
+}
+}

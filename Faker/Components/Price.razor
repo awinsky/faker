@@ -1,0 +1,40 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+
+@if (Field != null)
+{
+    <MatButton Raised="true"
+               Style="margin: 2px"
+               OnClick="RemoveField" TrailingIcon="remove">@Field.Name</MatButton>
+    @if (PriceField != null)
+    {
+        <MatNumericUpDownField Label="Min" TValue="decimal"
+                               @bind-Value=PriceField.Min
+                               Step="0.01m"
+                               DecimalPlaces=2 Minimum="1" Maximum="18000">
+
+        </MatNumericUpDownField>
+        <MatNumericUpDownField Label="Max" TValue="decimal"
+                               @bind-Value=PriceField.Max
+                               Step="0.01m"
+                               DecimalPlaces=2 Minimum="1" Maximum="18000">
+
+        </MatNumericUpDownField>
+        <MatNumericUpDownField Label="Decimals" TValue="int"
+                               @bind-Value=PriceField.Decimals
+                               Step="1"
+                               Minimum="0" Maximum="5">
+
+        </MatNumericUpDownField>
+        <MatTextField @bind-Value="@PriceField.Symbol" Label="Symbol"></MatTextField>
+
+    }
+}
+
+@code{
+
+    private PriceField? PriceField => Field?.Field as PriceField;
+
+
+}

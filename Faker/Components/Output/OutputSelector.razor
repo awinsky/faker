@@ -1,0 +1,51 @@
+﻿@using Faker.Model
+
+
+@if (Field != null)
+{
+    @switch (Field.Field.FieldType)
+    {
+        case FieldType.Simple:
+            <span>@Value</span>
+            break;
+        case FieldType.ImageDataUri:
+            <img src = "@Value" alt="@Field.Name"/>
+            break;
+        case FieldType.ImageLoremFlickrUrl:
+            <img src="@Value" alt="@Field.Name" />
+             break;
+        case FieldType.ImageLoremPixelUrl:
+            <img src="@Value" alt="@Field.Name" />
+            break;
+        case FieldType.ImagePicsumUrl:
+            <img src="@Value" alt="@Field.Name" />
+            break;
+        case FieldType.ImagePlaceholderUrl:
+            <img src="@Value" alt="@Field.Name" />
+            break;
+        case FieldType.StreetAddress:
+            <span>@Value</span>
+            break;
+        case FieldType.Latitude:
+            <span>@Value</span>
+            break;
+        case FieldType.Longitude:
+            <span>@Value</span>
+            break;
+        case FieldType.Price:
+            <span>@Value</span>
+            break;
+        default:
+            <span>@Value</span>
+            break;
+    }
+}
+
+
+
+@code {
+    [Parameter]
+    public FieldWrapper? Field { get; set; }
+    [Parameter]
+    public string? Value{ get; set; }
+}

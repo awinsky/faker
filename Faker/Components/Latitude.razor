@@ -1,0 +1,31 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+
+    <MatButton Raised="true"
+           Style="margin: 2px"
+           OnClick="RemoveField" TrailingIcon="remove">@Field.Name</MatButton>
+
+   @if (LatitudeField != null)
+   {
+       <MatNumericUpDownField Label="Min"
+                              @bind-Value=LatitudeField.Min
+                              Step="0.01"
+                              DecimalPlaces=2 Minimum="-90" Maximum="90">
+       </MatNumericUpDownField>
+       <MatNumericUpDownField Label="Max"
+                              @bind-Value=LatitudeField.Max
+                              Step="0.01"
+                              DecimalPlaces=2 Minimum="-90" Maximum="90">
+       </MatNumericUpDownField>
+   }
+
+}
+@code{
+
+    private LatitudeField? LatitudeField => Field?.Field as LatitudeField;
+
+
+}

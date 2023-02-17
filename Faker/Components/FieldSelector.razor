@@ -1,0 +1,43 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    @switch (Field.Field.FieldType)
+    {
+        case FieldType.Simple:
+            <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
+            break;
+        case FieldType.ImageDataUri:
+            <ImageDataUri Field="Field" RemoveRequested="RemoveField"></ImageDataUri>
+            break;
+        case FieldType.ImageLoremFlickrUrl:
+            <ImageLoremFlickrUrl Field="Field" RemoveRequested="RemoveField"></ImageLoremFlickrUrl>
+            break;
+        case FieldType.ImageLoremPixelUrl:
+            <ImageLoremPixelUrl Field="Field" RemoveRequested="RemoveField"></ImageLoremPixelUrl>
+            break;
+        case FieldType.ImagePicsumUrl:
+            <ImagePicsumUrl Field="Field" RemoveRequested="RemoveField"></ImagePicsumUrl>
+            break;
+        case FieldType.ImagePlaceholderUrl:
+            <ImagePlaceholderUrl Field="Field" RemoveRequested="RemoveField"></ImagePlaceholderUrl>
+            break;
+        case FieldType.StreetAddress:
+            <StreetAddress Field="Field" RemoveRequested="RemoveField"></StreetAddress>
+            break;
+        case FieldType.Latitude:
+            <Latitude Field="Field" RemoveRequested="RemoveField"></Latitude>
+            break;
+        case FieldType.Longitude:
+            <Longitude Field="Field" RemoveRequested="RemoveField"></Longitude>
+            break;
+        case FieldType.Price:
+            <Price Field="Field" RemoveRequested="RemoveField"></Price>
+            break;
+        default:
+            <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
+            break;
+    }
+}
+
