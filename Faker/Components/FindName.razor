@@ -1,0 +1,29 @@
+﻿@using Faker.Model
+@using Bogus.DataSets
+@using System.Linq
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    if (FindNameField != null)
+    {
+
+        <MatTextField @bind-Value="@FindNameField.FirstName" Label="First Name"></MatTextField>
+        <MatTextField @bind-Value="@FindNameField.LastName" Label="Last Name"></MatTextField>
+        <MatCheckbox @bind-Value="@FindNameField.WithPrefix" Label="Width prefix"></MatCheckbox>
+        <MatCheckbox @bind-Value="@FindNameField.WithSuffix" Label="Width suffix"></MatCheckbox>
+        <MatRadioGroup GroupName="gender" @bind-Value="FindNameField.Gender" TValue="Name.Gender?">
+            <MatRadioButton Value="@(null)" TValue="Name.Gender?">Default</MatRadioButton>
+            <MatRadioButton Value="@(Name.Gender.Female)" Label="Female" TValue="Name.Gender?"></MatRadioButton>
+            <MatRadioButton Value="@(Name.Gender.Male)" TValue="Name.Gender?">Male</MatRadioButton>
+        </MatRadioGroup>
+    }
+}
+@code {
+
+
+    private FindNameField? FindNameField => Field?.Field as FindNameField;
+
+}

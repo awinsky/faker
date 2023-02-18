@@ -32,5 +32,11 @@ public enum FieldType
     Letter,
     Sentence,
     Paragraph,
-    Slug
+    Slug,
+    Gender,
+    FirstName,
+    LastName,
+    FullName,
+    Prefix,
+    FindName
 }

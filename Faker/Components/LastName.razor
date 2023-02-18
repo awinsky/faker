@@ -1,0 +1,24 @@
+﻿@using Faker.Model
+@using Bogus.DataSets
+@using System.Linq
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    if (LastNameField != null)
+    {
+        <MatRadioGroup GroupName="gender" @bind-Value="LastNameField.Gender" TValue="Name.Gender?">
+            <MatRadioButton Value="@(null)" TValue="Name.Gender?">Default</MatRadioButton>
+            <MatRadioButton Value="@(Name.Gender.Female)" Label="Female" TValue="Name.Gender?"></MatRadioButton>
+            <MatRadioButton Value="@(Name.Gender.Male)" TValue="Name.Gender?">Male</MatRadioButton>
+      </MatRadioGroup>
+    }
+}
+@code {
+
+
+    private LastNameField? LastNameField => Field?.Field as LastNameField;
+
+}

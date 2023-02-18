@@ -5,6 +5,7 @@
 {
     @switch (Field.Field.FieldType)
     {
+        case FieldType.Gender:
         case FieldType.Simple:
         case FieldType.Avatar:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
@@ -98,6 +99,22 @@
             break;
         case FieldType.Slug:
             <Slug Field="Field" RemoveRequested="RemoveField"></Slug>
+            break;
+
+        case FieldType.FirstName:
+            <FirstName Field="Field" RemoveRequested="RemoveField"></FirstName>
+            break;
+        case FieldType.LastName:
+            <LastName Field="Field" RemoveRequested="RemoveField"></LastName>
+            break;
+        case FieldType.FullName:
+            <FullName Field="Field" RemoveRequested="RemoveField"></FullName>
+            break;
+        case FieldType.Prefix:
+            <Prefix Field="Field" RemoveRequested="RemoveField"></Prefix>
+            break;
+        case FieldType.FindName:
+            <FindName Field="Field" RemoveRequested="RemoveField"></FindName>
             break;
         default:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
