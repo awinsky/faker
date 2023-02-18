@@ -11,11 +11,10 @@ public class NameFieldSource : BaseFieldSource
         yield return new LastNameField(Faker, "Last Name");
         yield return new FullNameField(Faker, "Full Name");
         yield return new PrefixField(Faker, "Prefix");
-
+        yield return new FindNameField(Faker, "Find Name");
 
       
         yield return new SimpleField<string>(Faker, () => Faker.Name.Suffix(), "Suffix");
-        yield return new SimpleField<string>(Faker, () => Faker.Name.FindName(), "Find Name");
         yield return new SimpleField<string>(Faker, () => Faker.Name.JobTitle(), "Job Title");
         yield return new SimpleField<string>(Faker, () => Faker.Name.JobDescriptor(), "Job Descriptor");
         yield return new SimpleField<string>(Faker, () => Faker.Name.JobArea(), "Job Area");
