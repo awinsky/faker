@@ -4,82 +4,42 @@
 @if (Field != null)
 {
     @switch (Field.Field.FieldType)
-    {
-        case FieldType.Simple:
-            <span>@Value</span>
-            break;
-        case FieldType.ImageDataUri:
-            <img src = "@Value" alt="@Field.Name"/>
-            break;
-        case FieldType.ImageLoremFlickrUrl:
-            <img src="@Value" alt="@Field.Name" />
-             break;
-        case FieldType.ImageLoremPixelUrl:
-            <img src="@Value" alt="@Field.Name" />
-            break;
-        case FieldType.ImagePicsumUrl:
-            <img src="@Value" alt="@Field.Name" />
-            break;
-        case FieldType.ImagePlaceholderUrl:
-            <img src="@Value" alt="@Field.Name" />
-            break;
-        case FieldType.StreetAddress:
-            <span>@Value</span>
-            break;
-        case FieldType.Latitude:
-            <span>@Value</span>
-            break;
-        case FieldType.Longitude:
-            <span>@Value</span>
-            break;
-        case FieldType.Price:
-            <span>@Value</span>
-            break;
-        case FieldType.Categories:
-            <span>@Value</span>
-            break;
-        case FieldType.Past:
-            <span>@Value</span>
-            break;
-        case FieldType.PastOffset:
-            <span>@Value</span>
-            break;
-        case FieldType.Soon:
-            <span>@Value</span>
-            break;
-        case FieldType.SoonOffset:
-            <span>@Value</span>
-            break;
-        case FieldType.Future:
-            <span>@Value</span>
-            break;
-        case FieldType.FutureOffset:
-            <span>@Value</span>
-            break;
-        case FieldType.Account:
-            <span>@Value</span>
-            break;
-        case FieldType.Amount:
-            <span>@Value</span>
-            break;
-        case FieldType.CreditCardNumber:
-            <span>@Value</span>
-            break;
-        case FieldType.Iban:
-            <span>@Value</span>
-            break;
-        case FieldType.Avatar:
-            <img src = "@Value" alt="@Field.Name"/>
-            break;
+    {  
         case FieldType.Email:
         case FieldType.ExampleEmail:
         case FieldType.UserName:
         case FieldType.UserNameUnicode:
         case FieldType.Password:
-            <span>@Value</span>
-            break;
+        case FieldType.Letter:
+        case FieldType.Sentence:
+        case FieldType.Simple:
+        case FieldType.Iban:
+        case FieldType.StreetAddress:
+        case FieldType.Latitude:
+        case FieldType.Longitude:
+        case FieldType.Price:
+        case FieldType.Categories:
+        case FieldType.Past:
+        case FieldType.PastOffset:
+        case FieldType.Soon:
+        case FieldType.SoonOffset:
+        case FieldType.Future:
+        case FieldType.FutureOffset:
+        case FieldType.Account:
+        case FieldType.Amount:
+        case FieldType.CreditCardNumber:
+        case FieldType.Paragraph:
+        case FieldType.Slug:
         default:
             <span>@Value</span>
+            break;
+        case FieldType.ImageDataUri:
+        case FieldType.ImageLoremFlickrUrl:
+        case FieldType.ImageLoremPixelUrl:
+        case FieldType.ImagePicsumUrl:
+        case FieldType.ImagePlaceholderUrl:
+        case FieldType.Avatar:
+            <img src = "@Value" alt="@Field.Name"/>
             break;
     }
 }

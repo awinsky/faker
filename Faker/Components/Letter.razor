@@ -1,0 +1,22 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    if (LetterField != null)
+    {
+        <MatNumericUpDownField Label="Number" TValue="int"
+                       @bind-Value=LetterField.Number
+                       Step="1"
+                       Minimum="1" Maximum="10000"></MatNumericUpDownField>
+    }
+}
+
+
+@code {
+
+    private LetterField? LetterField => Field?.Field as LetterField;
+
+}

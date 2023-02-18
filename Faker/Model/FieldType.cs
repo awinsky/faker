@@ -28,5 +28,9 @@ public enum FieldType
     ExampleEmail,
     UserName,
     UserNameUnicode,
-    Password
+    Password,
+    Letter,
+    Sentence,
+    Paragraph,
+    Slug
 }

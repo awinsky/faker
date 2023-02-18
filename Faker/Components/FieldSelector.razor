@@ -87,6 +87,18 @@
         case FieldType.Password:
             <Password Field="Field" RemoveRequested="RemoveField"></Password>
             break;
+        case FieldType.Letter:
+            <Letter Field="Field" RemoveRequested="RemoveField"></Letter>
+            break;
+        case FieldType.Sentence:
+            <Sentence Field="Field" RemoveRequested="RemoveField"></Sentence>
+            break;
+        case FieldType.Paragraph:
+            <Paragraph Field="Field" RemoveRequested="RemoveField"></Paragraph>
+            break;
+        case FieldType.Slug:
+            <Slug Field="Field" RemoveRequested="RemoveField"></Slug>
+            break;
         default:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
             break;

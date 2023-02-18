@@ -1,0 +1,22 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    if (ParagraphField != null)
+    {
+        <MatNumericUpDownField Label="Min" TValue="int"
+                       @bind-Value=ParagraphField.Min
+                               Step="1"
+                               Minimum="1" Maximum="10000"></MatNumericUpDownField>
+    }
+}
+
+
+@code {
+
+    private ParagraphField? ParagraphField => Field?.Field as ParagraphField;
+
+}

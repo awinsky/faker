@@ -1,0 +1,27 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    if (SentenceField != null)
+    {
+        <MatNumericUpDownField Label="Word Count" TValue="int?"
+                               @bind-Value=SentenceField.WordCount
+                               Step="1"
+                               Minimum="1" Maximum="10000"></MatNumericUpDownField>
+        
+        <MatNumericUpDownField Label="Range" TValue="int?"
+                               @bind-Value=SentenceField.Range
+                               Step="1"
+                               Minimum="1" Maximum="10000"></MatNumericUpDownField>
+    }
+}
+
+
+@code {
+
+    private SentenceField? SentenceField => Field?.Field as SentenceField;
+
+}

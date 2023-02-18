@@ -8,11 +8,11 @@ public class LoremFieldSource : BaseFieldSource
     {
         yield return new SimpleField<string>(Faker, () => Faker.Lorem.Word(), "Word");
         yield return new SimpleField<string>(Faker, () => string.Join(" ", Faker.Lorem.Words()), "Words");
-        yield return new SimpleField<string>(Faker, () => Faker.Lorem.Letter(), "Letter");
-        yield return new SimpleField<string>(Faker, () => Faker.Lorem.Sentence(), "Sentence");
-        yield return new SimpleField<string>(Faker, () => Faker.Lorem.Paragraph(), "Paragraph");
+        yield return new LetterField(Faker, "Letter");
+        yield return new SentenceField(Faker, "Sentence");
+        yield return new ParagraphField(Faker, "Paragraph");
         yield return new SimpleField<string>(Faker, () => Faker.Lorem.Text(), "Text");
-        yield return new SimpleField<string>(Faker, () => Faker.Lorem.Slug(), "Slug");
+        yield return new SlugField(Faker, "Slug");
 
     }
 

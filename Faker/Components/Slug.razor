@@ -1,0 +1,22 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    if (SlugField != null)
+    {
+        <MatNumericUpDownField Label="Word Count" TValue="int"
+                       @bind-Value=SlugField.WordCount
+                               Step="1"
+                               Minimum="1" Maximum="10000"></MatNumericUpDownField>
+    }
+}
+
+
+@code {
+
+    private SlugField? SlugField => Field?.Field as SlugField;
+
+}
