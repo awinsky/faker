@@ -27,8 +27,8 @@ public class AddressFieldSource : BaseFieldSource
 
         yield return new LatitudeField(Faker, "Latitude");
         yield return new LongitudeField(Faker, "Longitude");
+        yield return new DirectionField(Faker, "Direction");
 
-        yield return new SimpleField<string>(Faker, () => Faker.Address.Direction(), "Direction");
         yield return new SimpleField<string>(Faker, () => Faker.Address.CardinalDirection(), "Cardinal Direction");
         yield return new SimpleField<string>(Faker, () => Faker.Address.OrdinalDirection(), "Cardinal Direction");
     }

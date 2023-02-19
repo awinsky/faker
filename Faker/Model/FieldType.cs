@@ -49,5 +49,6 @@ public enum FieldType
     RandomInt,
     RandomLong,
     RandomShort,
-    RandomChar
+    RandomChar,
+    Direction
 }

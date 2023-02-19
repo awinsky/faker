@@ -149,6 +149,9 @@
         case FieldType.RandomChar:
             <RandomGeneric T="char" Field="Field" RemoveRequested="RemoveField"></RandomGeneric>
             break;
+        case FieldType.Direction:
+            <Direction Field="Field" RemoveRequested="RemoveField"></Direction>
+            break;
         default:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
             break;

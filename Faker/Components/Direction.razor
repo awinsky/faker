@@ -1,0 +1,19 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+
+    if (DirectionField != null)
+    {
+        <MatCheckbox @bind-Value="@DirectionField.UseAbbreviation" Label="Use Abbreviation"></MatCheckbox>
+    }
+}
+
+
+@code {
+
+    private DirectionField? DirectionField => Field?.Field as DirectionField;
+
+}
