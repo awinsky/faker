@@ -50,5 +50,7 @@ public enum FieldType
     RandomLong,
     RandomShort,
     RandomChar,
-    Direction
+    Direction,
+    CardinalDirection,
+    OrdinalDirection
 }

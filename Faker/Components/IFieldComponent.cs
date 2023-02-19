@@ -5,9 +5,8 @@ namespace Faker.Components;
 
 public interface IFieldComponent
 {
-    [Parameter]
     EventCallback<FieldWrapper> RemoveRequested { get; set; }
-    [Parameter]
+
     FieldWrapper? Field { get; set; }
 }
 

@@ -152,6 +152,12 @@
         case FieldType.Direction:
             <Direction Field="Field" RemoveRequested="RemoveField"></Direction>
             break;
+        case FieldType.CardinalDirection:
+            <CardinalDirection Field="Field" RemoveRequested="RemoveField"></CardinalDirection>
+            break;
+        case FieldType.OrdinalDirection:
+            <OrdinalDirection Field="Field" RemoveRequested="RemoveField"></OrdinalDirection>
+            break;
         default:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
             break;
