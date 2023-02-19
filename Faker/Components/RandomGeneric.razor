@@ -1,0 +1,26 @@
+﻿@using Faker.Model
+@using Bogus.DataSets
+
+@inherits BaseFieldComponent
+@typeparam T
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    @if (RandomField != null)
+    {
+        <MatNumericUpDownField Label="Min" TValue="T"
+                       @bind-Value=RandomField.Min>
+
+        </MatNumericUpDownField>
+        <MatNumericUpDownField Label="Min" TValue="T"
+                       @bind-Value=RandomField.Max>
+        </MatNumericUpDownField>
+       
+    }
+}
+@code{
+
+    private RandomField<T>? RandomField => Field?.Field as RandomField<T>;
+
+}

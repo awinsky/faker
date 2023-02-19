@@ -116,6 +116,39 @@
         case FieldType.FindName:
             <FindName Field="Field" RemoveRequested="RemoveField"></FindName>
             break;
+        case FieldType.RandomNumber:
+            <RandomNumber Field="Field" RemoveRequested="RemoveField"></RandomNumber>
+            break;
+        case FieldType.RandomEven:
+            <RandomEven Field="Field" RemoveRequested="RemoveField"></RandomEven>
+            break;
+        case FieldType.RandomOdd:
+            <RandomOdd Field="Field" RemoveRequested="RemoveField"></RandomOdd>
+            break;
+        case FieldType.RandomDouble:
+            <RandomGeneric T="double" Field="Field" RemoveRequested="RemoveField"></RandomGeneric>
+            break;
+        case FieldType.RandomDecimal:
+            <RandomGeneric T="decimal" Field="Field" RemoveRequested="RemoveField"></RandomGeneric>
+            break;
+        case FieldType.RandomFloat:
+            <RandomGeneric T="float" Field="Field" RemoveRequested="RemoveField"></RandomGeneric>
+            break;
+        case FieldType.RandomByte:
+            <RandomGeneric T="byte" Field="Field" RemoveRequested="RemoveField"></RandomGeneric>
+            break;
+        case FieldType.RandomInt:
+            <RandomGeneric T="int" Field="Field" RemoveRequested="RemoveField"></RandomGeneric>
+            break;
+        case FieldType.RandomLong:
+            <RandomGeneric T="long" Field="Field" RemoveRequested="RemoveField"></RandomGeneric>
+            break;
+        case FieldType.RandomShort:
+            <RandomGeneric T="short" Field="Field" RemoveRequested="RemoveField"></RandomGeneric>
+            break;
+        case FieldType.RandomChar:
+            <RandomGeneric T="char" Field="Field" RemoveRequested="RemoveField"></RandomGeneric>
+            break;
         default:
             <StringField Field="Field" RemoveRequested="RemoveField"></StringField>
             break;

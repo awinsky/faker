@@ -1,0 +1,27 @@
+﻿@using Faker.Model
+@inherits BaseFieldComponent
+
+
+@if (Field != null)
+{
+    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    @if (RandomEvenField != null)
+    {
+        <MatNumericUpDownField Label="Min" TValue="int"
+                       @bind-Value=RandomEvenField.Min>
+
+        </MatNumericUpDownField>
+        <MatNumericUpDownField Label="Min" TValue="int"
+                       @bind-Value=RandomEvenField.Min>
+        </MatNumericUpDownField>
+       
+
+    }
+}
+
+@code {
+
+    private RandomEvenField? RandomEvenField => Field?.Field as RandomEvenField;
+
+
+}

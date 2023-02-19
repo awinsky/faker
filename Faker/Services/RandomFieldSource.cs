@@ -7,26 +7,31 @@ public class RandomFieldSource : BaseFieldSource
 {
     protected override IEnumerable<IField> GetFieldsInternal()
     {
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Number().ToString(), "Number");
-        //yield return new Field<string>(Faker, () => Faker.Random.Digits(), "Number");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Even().ToString(), "Even");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Odd().ToString(), "Odd");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Double()
-            .ToString(CultureInfo.InvariantCulture), "Double");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Decimal()
-            .ToString(CultureInfo.InvariantCulture), "Decimal");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Float()
-            .ToString(CultureInfo.InvariantCulture), "Float");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Byte()
-            .ToString(CultureInfo.InvariantCulture), "Byte");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Int()
-            .ToString(CultureInfo.InvariantCulture), "Int");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Long()
-            .ToString(CultureInfo.InvariantCulture), "Long");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Short()
-            .ToString(CultureInfo.InvariantCulture), "Short");
-        yield return new SimpleField<string>(Faker, () => Faker.Random.Char()
-            .ToString(CultureInfo.InvariantCulture), "Char");
+        yield return new RandomNumberField(Faker, "Number");
+        yield return new RandomEvenField(Faker, "Even");
+        yield return new RandomOddField(Faker, "Odd");
+
+
+        yield return new RandomField<double>(Faker, "Double", 0.0d, 1.0d, Faker.Random.Double,
+            FieldType.RandomDouble);
+        yield return new RandomField<decimal>(Faker, "Decimal", 0.0m, 11.0m, Faker.Random.Decimal,
+            FieldType.RandomDecimal);
+        yield return new RandomField<float>(Faker, "Float", 0.0f, 11.0f, Faker.Random.Float,
+            FieldType.RandomFloat);
+        yield return new RandomField<byte>(Faker, "Byte", byte.MinValue, byte.MaxValue, Faker.Random.Byte,
+            FieldType.RandomByte);
+        yield return new RandomField<int>(Faker, "Int", int.MinValue, int.MaxValue, Faker.Random.Int,
+            FieldType.RandomInt);
+        yield return new RandomField<long>(Faker, "Long", long.MinValue, long.MaxValue, Faker.Random.Long,
+            FieldType.RandomLong);
+        yield return new RandomField<short>(Faker, "Short", short.MinValue, short.MaxValue, Faker.Random.Short,
+            FieldType.RandomShort);
+        yield return new RandomField<char>(Faker, "Char", char.MinValue, char.MaxValue, Faker.Random.Char,
+            FieldType.RandomChar);
+        yield return new RandomField<char>(Faker, "Char", char.MinValue, char.MaxValue, Faker.Random.Char,
+            FieldType.RandomChar);
+
+
         yield return new SimpleField<string>(Faker, () => Faker.Random.String()
             .ToString(CultureInfo.InvariantCulture), "String");
         yield return new SimpleField<string>(Faker, () => Faker.Random.Hash()

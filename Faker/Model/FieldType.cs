@@ -38,5 +38,16 @@ public enum FieldType
     LastName,
     FullName,
     Prefix,
-    FindName
+    FindName,
+    RandomNumber,
+    RandomEven,
+    RandomOdd,
+    RandomDouble,
+    RandomDecimal,
+    RandomFloat,
+    RandomByte,
+    RandomInt,
+    RandomLong,
+    RandomShort,
+    RandomChar
 }
