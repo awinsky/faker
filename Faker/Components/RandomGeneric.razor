@@ -6,7 +6,7 @@
 
 @if (Field != null)
 {
-    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
+    <FieldControl Field="Field" RemoveRequested="RemoveField"></FieldControl>
     @if (RandomField != null)
     {
         <MatNumericUpDownField Label="Min" TValue="T"

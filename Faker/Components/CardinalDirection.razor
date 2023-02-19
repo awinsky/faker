@@ -3,8 +3,7 @@
 
 @if (Field != null)
 {
-    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
-
+    <FieldControl Field="Field" RemoveRequested="RemoveField"></FieldControl>
     if (CardinalDirectionField != null)
     {
         <MatCheckbox @bind-Value="@CardinalDirectionField.UseAbbreviation" Label="Use Abbreviation"></MatCheckbox>

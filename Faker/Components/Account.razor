@@ -3,8 +3,7 @@
 
 @if (Field != null)
 {
-    <MatIconButton Icon="remove" OnClick="RemoveField"></MatIconButton>
-
+    <FieldControl Field="Field" RemoveRequested="RemoveField"></FieldControl>
     @if (AccountField != null)
     {
         <MatNumericUpDownField Label="Length" TValue="int"

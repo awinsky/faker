@@ -12,9 +12,7 @@ public partial class Index
     private void AddFiled(IField field)
     {
         _result.Clear();
-        var count = _selectedFields.Count(x => x.Field.Description == field.Description) + 1;
-        var name = $"{field.Description}#{count}";
-        _selectedFields.Add(new(field, name));
+        _selectedFields.Add(new(field, field.Description));
     }
 
     private Task LocaleChanged(LocaleDto locale)

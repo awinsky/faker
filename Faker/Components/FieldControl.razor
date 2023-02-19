@@ -1,0 +1,25 @@
+﻿@using Faker.Model
+
+@if (Field != null)
+{
+      <MatTextField @bind-Value="@Field.Name" Label="Output name"></MatTextField>
+    <MatIconButton Icon="clear" OnClick="OnRemoveRequested"></MatIconButton>
+  
+}
+
+@code{
+
+    [Parameter]
+    public FieldWrapper? Field { get; set; }
+    [Parameter]
+    public EventCallback RemoveRequested{ get; set; }
+
+    public async Task OnRemoveRequested()
+    {
+        if (RemoveRequested.HasDelegate)
+        {
+            await RemoveRequested.InvokeAsync();
+        }
+    }
+
+}
